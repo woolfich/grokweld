@@ -1,6 +1,7 @@
 <script lang="ts">
   import { writable } from 'svelte/store';
   import { goto, invalidateAll } from '$app/navigation';
+  import { base } from '$app/paths'; // ← добавлено
   import { db } from '$lib/db';
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
@@ -43,7 +44,7 @@
 
   // Функция перехода в карточку сварщика
   function goToWelder(welder: string) {
-    goto(`/welder/${encodeURIComponent(welder)}`);
+    goto(`${base}/welder/${encodeURIComponent(welder)}`); // ← с base
   }
 
   // Функция экспорта
@@ -143,14 +144,12 @@
   <footer class="sticky bottom-0 p-4 bg-gray-800 border-t border-gray-700 flex gap-4 justify-center">
     <button
       class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-      on:click={() => goto('/summary')}
-    >
+      on:click={() => goto(`${base}/summary`)}> <!-- ← с base -->
       Сводка
     </button>
     <button
       class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-      on:click={() => goto('/standards')}
-    >
+      on:click={() => goto(`${base}/standards`)}> <!-- ← с base -->
       Нормы
     </button>
   </footer>

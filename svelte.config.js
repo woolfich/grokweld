@@ -7,10 +7,10 @@ export default {
 
   kit: {
     adapter: adapter({
-      fallback: 'index.html' // SPA-режим
+      fallback: '404.html' // ← ВАЖНО: для GitHub Pages
     }),
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/grokweld' : '',
+      base: '/grokweld' // ← всегда указываем имя репо
     }
   }
 };

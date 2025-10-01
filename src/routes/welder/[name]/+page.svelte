@@ -286,11 +286,11 @@
 
   <!-- Кнопка На главную -->
   <footer class="sticky bottom-0 p-4 bg-gray-800 border-t border-gray-700 flex justify-center">
-  <button
-    class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
-    on:click={() => goto('/')}
-  >
-    На главную
-  </button>
-</footer>
+    <button
+      class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
+      on:click={() => goto('/')}
+    >
+      На главную
+    </button>
+  </footer>
 </div>

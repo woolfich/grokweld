@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "node --max-old-space-size=4096 ./node_modules/vite/bin/vite.js build", // Увеличен лимит памяти
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -21,7 +21,7 @@
 		"@sveltejs/kit": "^2.22.0",
 		"@sveltejs/vite-plugin-svelte": "^6.0.0",
 		"@tailwindcss/forms": "^0.5.9",
-		"@tailwindcss/vite": "^4.0.0",
+		"@tailwindcss/vite": "^4.0.0", // Убедись, что он установлен
 		"@types/node": "^22",
 		"@vite-pwa/sveltekit": "^1.0.0",
 		"eslint": "^9.22.0",

@@ -1,16 +1,13 @@
-import adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { defineConfig } from 'vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import tailwindcss from '@tailwindcss/vite';
 
-/** @type {import('@sveltejs/kit').Config} */
-export default {
-  preprocess: vitePreprocess(),
-
-  kit: {
-    adapter: adapter({
-      fallback: '404.html' // ← ВАЖНО: для GitHub Pages
+export default defineConfig({
+  plugins: [
+    tailwindcss({           // ← важно ставить ДО sveltekit
+      basePath: '/grokweld' // ← тот же путь, что и в svelte.config.js
     }),
-    paths: {
-      base: '/grokweld' // ← всегда указываем имя репо
-    }
-  }
-};
+    sveltekit()
+  ],
+  base: '/grokweld/'       // ← ещё одно место, куда Vite вставит префикс
+});

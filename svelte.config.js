@@ -5,9 +5,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   plugins: [
     tailwindcss({           // ← важно ставить ДО sveltekit
-      basePath: '/grokweld' // ← тот же путь, что и в svelte.config.js
+      basePath: './grokweld' // ← тот же путь, что и в svelte.config.js
     }),
     sveltekit()
   ],
-  base: '/grokweld/'       // ← ещё одно место, куда Vite вставит префикс
+  base: './grokweld/'       // ← ещё одно место, куда Vite вставит префикс
 });

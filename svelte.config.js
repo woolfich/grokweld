@@ -11,7 +11,7 @@ const config = {
       strict: true
     }),
     paths: {
-      base: './grokweld'   // ← твоя подпапка репозитория
+      base: '/grokweld'   // ← твоя подпапка репозитория
     }
   }
 };

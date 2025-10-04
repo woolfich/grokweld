@@ -11,7 +11,15 @@ const config = {
       strict: true
     }),
     paths: {
-      base: '/grokweld'   // ← твоя подпапка репозитория
+      base: '/grokweld'
+    },
+    prerender: {
+      entries: [
+        '*',                      // все статичные страницы
+        '/welder/ivan',
+        '/welder/petr',
+        '/welder/sergey'
+      ]
     }
   }
 };

@@ -37,6 +37,7 @@
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.20.0",
 		"vite": "^7.0.4"
+		"dexie": "^4.0.0",
 	},	"pnpm": {
 		"overrides": {}
 	}

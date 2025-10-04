@@ -1,13 +1,19 @@
-import { defineConfig } from 'vite';
-import { sveltekit } from '@sveltejs/kit/vite';
-import tailwindcss from '@tailwindcss/vite';
+import adapter from '@sveltejs/adapter-static';
 
-export default defineConfig({
-  plugins: [
-    tailwindcss({           // ← важно ставить ДО sveltekit
-      basePath: './grokweld' // ← тот же путь, что и в svelte.config.js
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  kit: {
+    adapter: adapter({
+      pages: 'build',
+      assets: 'build',
+      fallback: null,
+      precompress: false,
+      strict: true
     }),
-    sveltekit()
-  ],
-  base: './grokweld/'       // ← ещё одно место, куда Vite вставит префикс
-});
+    paths: {
+      base: './grokweld'   // ← твоя подпапка репозитория
+    }
+  }
+};
+
+export default config;

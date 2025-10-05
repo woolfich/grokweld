@@ -325,7 +325,7 @@
 	<footer class="sticky bottom-0 flex justify-center border-t border-gray-700 bg-gray-800 p-4">
 		<button
 			class="rounded-lg bg-blue-600 px-4 py-2 transition-colors hover:bg-blue-700"
-			on:click={() => goto('/')}
+			on:click={() => goto(base)}
 		>
 			На главную
 		</button>
